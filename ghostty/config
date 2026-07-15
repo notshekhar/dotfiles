@@ -1,0 +1,6 @@
+macos-titlebar-style = tabs
+theme = Afterglow
+
+# Press F5 to resume a paused Claude Code loop: types "continue" + Enter.
+# \r (carriage return) = submit; \n would just insert a newline.
+keybind = f5=text:continue\r
