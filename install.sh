@@ -45,6 +45,7 @@ npm ls -g @mermaid-js/mermaid-cli >/dev/null 2>&1 || npm install -g @mermaid-js/
 link "$DOTFILES/nvim" "$HOME/.config/nvim"
 link "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 link "$DOTFILES/zshrc" "$HOME/.zshrc"
+link "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
 
 # --- nvim plugins + language servers ------------------------------------------
 echo "Installing nvim plugins (takes a minute on first run)..."

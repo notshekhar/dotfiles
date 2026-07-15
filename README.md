@@ -9,6 +9,7 @@ My Mac setup: Neovim (LazyVim), Ghostty, zsh.
 | `nvim/` | `~/.config/nvim` | LazyVim: LSP (TypeScript, Zig, Lua, JSON, Markdown), Cursor Dark theme, git signs + lazygit, spell check + dictionary word completion, instant which-key, format-on-save off |
 | `ghostty/config` | `~/.config/ghostty/config` | Ghostty terminal config |
 | `zshrc` | `~/.zshrc` | oh-my-zsh, autosuggestions, syntax highlighting, fzf, zoxide, `vi`/`vim` → nvim, prompt timer |
+| `.tmux.conf` | `~/.tmux.conf` | tmux config |
 | `Brewfile` | — | every brew/cask dependency |
 | `install.sh` | — | one-command bootstrap |
 
