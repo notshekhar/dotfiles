@@ -18,6 +18,7 @@ brew "imagemagick"
 brew "ghostscript"
 brew "tectonic"
 
-# terminal + font
+# terminal + editor + font
 cask "ghostty"
+cask "zed"
 cask "font-jetbrains-mono-nerd-font"

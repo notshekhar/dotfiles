@@ -48,8 +48,12 @@ path=(
   "$HOME/.grok/bin"
   "$HOME/.local/bin"
   "$BUN_INSTALL/bin"
+  # `cursor .` — ~/.local/bin/cursor is the agent shim; it hands off to this one
+  "/Applications/Cursor.app/Contents/Resources/app/bin"
   $path
 )
+# `zed .` — Zed.app ships its CLI inside the bundle, not on PATH
+alias zed="/Applications/Zed.app/Contents/MacOS/cli"
 
 # ---------------------------------------------------------------------------
 # Completion styling (zstyles are read at completion time, so they may stay

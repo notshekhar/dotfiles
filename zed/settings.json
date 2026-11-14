@@ -1,0 +1,166 @@
+// Zed settings — tuned to feel and look like Cursor (VS Code underneath).
+//
+// Keys come from `base_keymap: "Cursor"` (VS Code keys + Cursor's AI keys);
+// personal and VS Code-only bindings live in keymap.json.
+// See all defaults with `zed: open default settings` (cmd-shift-p).
+{
+  "agent_servers": {
+    "cursor": {
+      "default_config_options": {
+        "model": "grok-4.5"
+      },
+      "type": "registry"
+    }
+  },
+
+  // ---- Keys & multi-cursor (Cursor: editor.multiCursorModifier = ctrlCmd)
+  "base_keymap": "Cursor",
+  "multi_cursor_modifier": "cmd_or_ctrl", // cmd-click adds a cursor, alt-click goes to definition
+
+  // ---- Code navigation, VS Code style
+  // Definition / references / implementation open in a popup list with a code
+  // preview (Cursor's peek) instead of a new multibuffer tab.
+  "lsp_results_location": "picker",
+  // cmd-click on a definition itself lists its references, like VS Code.
+  "go_to_definition_fallback": "find_all_references",
+
+  // ---- Theme & fonts
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Cursor Dark"
+  },
+  // The Zed "Cursor Dark" port draws gitignored names in #505050 on a #404040
+  // selection (invisible) with a Nord-blue focus ring. These are the real
+  // colours from Cursor's own Cursor Dark theme (theme-cursor extension).
+  "theme_overrides": {
+    "Cursor Dark": {
+      // Sidebar rows: list.activeSelection / inactiveSelection / hover
+      "element.selected": "#F0F0F01E",
+      "element.hover": "#F0F0F011",
+      "element.active": "#F0F0F01E",
+      "ghost_element.selected": "#F0F0F01E",
+      "ghost_element.hover": "#F0F0F011",
+      "ghost_element.active": "#F0F0F01E",
+      "panel.focused_border": "#F0F0F026", // focusBorder: a faint ring, not blue
+      "border.focused": "#F0F0F026",
+      "border.selected": "#F0F0F026",
+
+      // Explorer text and git decorations
+      "text": "#F0F0F0",
+      "text.muted": "#F0F0F0BD",
+      "ignored": "#F0F0F099",
+      "hidden": "#F0F0F0BD",
+      "modified": "#F1B467",
+      "created": "#70B489",
+      "deleted": "#FC6B83",
+
+      // Surfaces
+      "panel.background": "#141414",
+      "title_bar.background": "#141414",
+      "status_bar.background": "#141414",
+      "tab_bar.background": "#141414",
+      "tab.inactive_background": "#141414",
+      "tab.active_background": "#181818",
+      "toolbar.background": "#181818",
+      "editor.background": "#181818",
+      "editor.gutter.background": "#181818",
+      "editor.active_line.background": "#262626",
+      "editor.line_number": "#F0F0F05C",
+      "editor.active_line_number": "#F0F0F0",
+      "editor.indent_guide": "#F0F0F013",
+      "editor.indent_guide_active": "#F0F0F030",
+      "scrollbar.thumb.background": "#F0F0F011"
+    }
+  },
+  "icon_theme": "Material Icon Theme",
+  "auto_install_extensions": {
+    "material-icon-theme": true
+  },
+  "ui_font_family": ".SystemUIFont", // Cursor's chrome uses SF Pro
+  // Sizes are Cursor's own macOS defaults: workbench 13px, editor 12px, and
+  // your Cursor editor.lineHeight of 21px (21 / 12 = 1.75).
+  // Zed draws sidebar/tab labels at 14/16 of ui_font_size, so 15 gives
+  // Cursor's 13px workbench text.
+  "ui_font_size": 15,
+  "agent_ui_font_size": 15,
+  "agent_buffer_font_size": 12,
+  "buffer_font_family": "Menlo", // what Cursor actually renders: Dank Mono isn't installed
+  "buffer_font_size": 12,
+  "buffer_line_height": { "custom": 1.75 },
+  "semantic_tokens": "combined", // VS Code colours symbols with the language server too
+
+  // ---- Editor surface (VS Code defaults)
+  "colorize_brackets": true, // bracket pair colorization
+  "current_line_highlight": "line",
+  "sticky_scroll": { "enabled": true },
+  "minimap": { "show": "never" },
+  "scrollbar": { "show": "auto" },
+  "indent_guides": { "enabled": true, "coloring": "fixed" },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false, // VS Code has only breadcrumbs above the editor
+    "selections_menu": false
+  },
+
+  // ---- Completions & hints
+  "auto_signature_help": true,
+  "show_signature_help_after_edits": true,
+  "completion_menu_item_kind": "symbol", // kind icons in the suggest list
+  "completion_menu_scrollbar": "auto",
+
+  // ---- Tabs
+  "tab_bar": { "show_nav_history_buttons": false },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "errors"
+  },
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_file_finder": true // cmd-p opens an italic preview tab
+  },
+
+  // ---- Explorer (left), chat (right), terminal (bottom)
+  "project_panel": {
+    "dock": "left",
+    "entry_spacing": "standard",
+    "indent_size": 14,
+    "git_status": true,
+    "git_status_indicator": true, // M / U / D letters beside file names
+    "diagnostic_badges": true,
+    "auto_reveal_entries": true
+  },
+  "git_panel": { "dock": "left" },
+  "agent": { "dock": "right" },
+  "terminal": { "dock": "bottom", "font_family": "Menlo", "font_size": 12 }, // Cursor's terminal follows the editor size
+
+  // ---- Git (GitLens-style current-line blame, inline diffs)
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 500,
+      "show_commit_summary": true
+    }
+  },
+  "diff_view_style": "unified", // Cursor: diffEditor.renderSideBySide = false
+
+  // ---- Status bar
+  "status_bar": {
+    "line_endings_button": true,
+    "active_encoding_button": "enabled"
+  },
+
+  // ---- Editing (match Cursor: format only on demand with alt-q, 4-space)
+  "format_on_save": "off",
+  // Keep trailing spaces like Cursor (files.trimTrailingWhitespace is off there),
+  // but always end the file with a newline.
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": false,
+  "tab_size": 4,
+  "prettier": { "allowed": true, "semi": false, "tabWidth": 4 },
+  "languages": {
+    // Cursor formats .tsx with the TypeScript language server, not Prettier.
+    "TSX": { "formatter": "language_server" }
+  }
+}

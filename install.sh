@@ -46,6 +46,9 @@ link "$DOTFILES/nvim" "$HOME/.config/nvim"
 link "$DOTFILES/ghostty/config" "$HOME/.config/ghostty/config"
 link "$DOTFILES/zshrc" "$HOME/.zshrc"
 link "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
+# Zed keeps state (prompts, extensions) next to these, so link files, not the dir.
+link "$DOTFILES/zed/settings.json" "$HOME/.config/zed/settings.json"
+link "$DOTFILES/zed/keymap.json" "$HOME/.config/zed/keymap.json"
 
 # --- nvim plugins + language servers ------------------------------------------
 echo "Installing nvim plugins (takes a minute on first run)..."

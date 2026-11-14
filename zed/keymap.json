@@ -1,0 +1,35 @@
+// Personal bindings ported from Cursor's keybindings.json, plus the VS Code
+// keys Zed's "Cursor" base keymap maps differently.
+[
+  {
+    "context": "Editor && mode == full",
+    "use_key_equivalents": true,
+    "bindings": {
+      // From Cursor's keybindings.json
+      "alt-q": "editor::Format",
+      "alt-d": "editor::GoToDefinition",
+
+      // VS Code navigation: F12 definition, alt-F12 peek definition,
+      // shift-F12 peek references, cmd-F12 implementations.
+      "alt-f12": ["editor::GoToDefinition", { "open_results_in": "picker" }],
+      "shift-f12": ["editor::FindAllReferences", { "open_results_in": "picker" }],
+      "cmd-f12": "editor::GoToImplementation",
+
+      // Multi-cursor. Cursor's base keymap gives cmd-shift-l to the agent;
+      // take it back for "select all occurrences".
+      "cmd-shift-l": "editor::SelectAllMatches",
+      "cmd-f2": "editor::SelectAllMatches",
+      "alt-shift-i": "editor::SplitSelectionIntoLines", // a cursor at the end of each selected line
+
+      "alt-z": "editor::ToggleSoftWrap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-o": "workspace::NewFile", // from Cursor's keybindings.json
+      "ctrl-shift-`": "workspace::NewTerminal"
+    }
+  }
+]
