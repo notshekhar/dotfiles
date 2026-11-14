@@ -151,11 +151,28 @@ add-zsh-hook precmd  _timer_precmd
 # ---------------------------------------------------------------------------
 command_not_found_handler() { print -u2 "zsh: command not found: $1"; return 127 }
 
+
+# opencode
+export PATH=/Users/shekhar/.opencode/bin:$PATH
+
+# kilo
+export PATH=/Users/shekhar/.kilo/bin:$PATH
+
 # >>> grok installer >>>
 export PATH="$HOME/.grok/bin:$PATH"
 fpath=(~/.grok/completions/zsh $fpath)
 autoload -Uz compinit && compinit -C
 # <<< grok installer <<<
 
-# opencode
-export PATH=/Users/shekhar/.opencode/bin:$PATH
+# bun completions
+[ -s "/Users/shekhar/.bun/_bun" ] && source "/Users/shekhar/.bun/_bun"
+
+# MiniMax Code CLI
+export PATH="/Users/shekhar/.minimax-code/bin:$PATH"
+
+# Added by MiniMax Code
+export PATH="/Users/shekhar/.minimax/bin:$PATH"
+
+
+# Secrets and machine-only settings live outside the repo.
+[ -f "$HOME/.zshrc.local" ] && source "$HOME/.zshrc.local"
