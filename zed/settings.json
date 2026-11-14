@@ -74,8 +74,22 @@
     }
   },
   "icon_theme": "Material Icon Theme",
+  // Installed on first launch on a new machine. "cursor" provides the
+  // Cursor Dark theme above, so it must be here.
   "auto_install_extensions": {
-    "material-icon-theme": true
+    "cursor": true,
+    "material-icon-theme": true,
+    "dockerfile": true,
+    "emmet": true,
+    "git-firefly": true,
+    "html": true,
+    "java": true,
+    "sql": true,
+    "terraform": true,
+    "toml": true,
+    "windows-batch": true,
+    "xml": true,
+    "zig": true
   },
   "ui_font_family": ".SystemUIFont", // Cursor's chrome uses SF Pro
   // Sizes are Cursor's own macOS defaults: workbench 13px, editor 12px, and
