@@ -5,18 +5,3 @@ theme = Afterglow
 # when Ghostty relaunches — closest thing to tmux sessions natively. Running
 # PROCESSES don't survive; for that, run tmux inside (see ~/.tmux.conf).
 window-save-state = always
-
-# Press F5 to resume a paused Claude Code loop: types "continue" + Enter.
-# \r (carriage return) = submit; \n would just insert a newline.
-keybind = f5=text:continue\r
-
-# Forward mac-native editing chords to terminal apps as kitty-CSI-u sequences
-# (macOS/Ghostty swallow Cmd chords before the pty otherwise). loop's editor
-# binds these: Cmd+Backspace = delete to line start, Cmd+arrows = line/input
-# jumps, Cmd+Z = undo. Modifier 9 = 1+super.
-keybind = super+backspace=csi:127;9u
-keybind = super+left=csi:1;9D
-keybind = super+right=csi:1;9C
-keybind = super+up=csi:1;9A
-keybind = super+down=csi:1;9B
-keybind = super+z=csi:122;9u
