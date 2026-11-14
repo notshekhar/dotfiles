@@ -139,13 +139,14 @@
   "project_panel": {
     "dock": "left",
     "entry_spacing": "standard",
+    "default_width": 400,
     "indent_size": 14,
     "git_status": true,
     "git_status_indicator": true, // M / U / D letters beside file names
     "diagnostic_badges": true,
     "auto_reveal_entries": true
   },
-  "git_panel": { "dock": "left" },
+  "git_panel": { "dock": "left", "default_width": 400 },
   "agent": { "dock": "right" },
   "terminal": { "dock": "bottom", "font_family": "Menlo", "font_size": 12 }, // Cursor's terminal follows the editor size
 
