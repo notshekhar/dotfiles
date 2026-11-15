@@ -5,6 +5,18 @@
 // See all defaults with `zed: open default settings` (cmd-shift-p).
 {
   "agent_servers": {
+    "grok-build": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "default_config_options": {
+        "fast": false,
+        "effort": "medium",
+        "model": "opus",
+        "mode": "bypassPermissions"
+      },
+      "type": "registry"
+    },
     "cursor": {
       "default_config_options": {
         "model": "grok-4.5"
@@ -146,7 +158,13 @@
     "diagnostic_badges": true,
     "auto_reveal_entries": true
   },
-  "git_panel": { "dock": "left", "default_width": 400 },
+  "git_panel": {
+    "dock": "left",
+    "default_width": 400,
+    // VS Code style: clicking a changed file opens that one file as a full
+    // diff tab, not the GitHub-style all-files Project Diff.
+    "entry_primary_click_action": "file_diff"
+  },
   "agent": { "dock": "right" },
   "terminal": { "dock": "bottom", "font_family": "Menlo", "font_size": 12 }, // Cursor's terminal follows the editor size
 

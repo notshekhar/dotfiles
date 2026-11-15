@@ -1,0 +1,44 @@
+// Global Bun tasks, available in every project (cmd-shift-r to pick one,
+// cmd-alt-r to rerun the last). Zed only adds its own `bun test` tasks when
+// package.json lists @types/bun, and runs package scripts with npm unless
+// package.json sets "packageManager": "bun@…" — it never looks at bun.lock.
+[
+  {
+    "label": "bun: run file",
+    "command": "bun",
+    "args": ["$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "bun: test file",
+    "command": "bun",
+    "args": ["test", "$ZED_FILE"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "bun: test all",
+    "command": "bun",
+    "args": ["test"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "bun: dev",
+    "command": "bun",
+    "args": ["run", "dev"],
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "use_new_terminal": true,
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "bun: typecheck",
+    "command": "bun",
+    "args": ["run", "typecheck"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "bun: install",
+    "command": "bun",
+    "args": ["install"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  }
+]
